@@ -1,0 +1,12 @@
+assignment_1_code_v2/fmauch_universal_robot/ur_kinematics
+/home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/.private/ur_kinematics/cmake.lock /home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/./cmake.lock
+/home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/.private/ur_kinematics/share/ur_kinematics/cmake/ur_kinematicsConfig.cmake /home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/share/ur_kinematics/cmake/ur_kinematicsConfig.cmake
+/home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/.private/ur_kinematics/share/ur_kinematics/cmake/ur_kinematicsConfig-version.cmake /home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/share/ur_kinematics/cmake/ur_kinematicsConfig-version.cmake
+/home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/.private/ur_kinematics/lib/libur10_moveit_plugin.so /home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/lib/libur10_moveit_plugin.so
+/home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/.private/ur_kinematics/lib/libur10_kin.so /home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/lib/libur10_kin.so
+/home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/.private/ur_kinematics/lib/libur3_moveit_plugin.so /home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/lib/libur3_moveit_plugin.so
+/home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/.private/ur_kinematics/lib/libur5_moveit_plugin.so /home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/lib/libur5_moveit_plugin.so
+/home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/.private/ur_kinematics/lib/libur5_kin.so /home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/lib/libur5_kin.so
+/home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/.private/ur_kinematics/lib/libur3_kin.so /home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/lib/libur3_kin.so
+/home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/.private/ur_kinematics/lib/python2.7/dist-packages/ur_kinematics/__init__.py /home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/lib/python2.7/dist-packages/ur_kinematics/__init__.py
+/home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/.private/ur_kinematics/lib/pkgconfig/ur_kinematics.pc /home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/lib/pkgconfig/ur_kinematics.pc
