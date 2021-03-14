@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/Universal_Robots_ROS_Driver/controller_stopper/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/gazebo_ros_link_attacher/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/robotiq/robotiq_2f_gripper_action_server/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/robotiq/robotiq_2f_gripper_control/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/robotiq/robotiq_3f_gripper_articulated_gazebo_plugins/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/robotiq/robotiq_3f_gripper_control/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/robotiq/robotiq_ethercat/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/robotiq/robotiq_ft_sensor/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/Universal_Robots_ROS_Driver/ur_calibration/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/Universal_Robots_Client_Library/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/Universal_Robots_ROS_Driver/ur_controllers/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/fmauch_universal_robot/ur_kinematics/include/**",
+        "/home/jesse/Code/src/MTRX5700_assignment1/question_2/src/assignment_1_code_v2/Universal_Robots_ROS_Driver/ur_robot_driver/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

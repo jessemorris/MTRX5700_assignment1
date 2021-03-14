@@ -30,4 +30,8 @@
   <!-- load other controllers -->
   <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_position_controller" />
 
+  <!-- Load Move Group -->
+  <include file="$(find ur5_e_moveit_config)/launch/ur5_e_moveit_planning_execution.launch" />
+
+
 </launch>

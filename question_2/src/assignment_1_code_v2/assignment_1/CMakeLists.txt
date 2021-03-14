@@ -12,12 +12,16 @@ find_package(catkin REQUIRED
     moveit_core
     moveit_ros_planning
     moveit_ros_planning_interface
+    gazebo_msgs
     moveit_visual_tools
     geometric_shapes
+    std_msgs
     tf2_ros
     tf2_eigen
     tf2_geometry_msgs
     )
+
+catkin_python_setup()
 
 ## System dependencies are found with CMake's conventions
 find_package(Eigen3 REQUIRED)
@@ -25,7 +29,13 @@ find_package(Eigen3 REQUIRED)
 ## catkin specific configuration
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES assignment_1
-#  CATKIN_DEPENDS other_catkin_pkg
+  #LIBRARIES plotting
+  CATKIN_DEPENDS rospy std_msgs message_runtime
 #  DEPENDS system_lib
+)
+
+catkin_install_python(PROGRAMS
+    scripts/build_tower.py
+  
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

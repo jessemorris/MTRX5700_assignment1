@@ -5,6 +5,7 @@ import geometry_msgs.msg
 from move_group_interface import MoveGroupPythonInteface
 from std_msgs.msg import Float32MultiArray
 
+from assignment_1.robot_movement import RobotMotion
 
 def callback(input_msg):
     print(input_msg)
@@ -13,6 +14,9 @@ def callback(input_msg):
 def main():
     try:
         raw_input("Press Enter to build a tower")     # waits for Enter
+
+        robot = RobotMotion()
+        robot.run_build()
        
         # Write your code here
         # 1. You can write as many additional functions as you need.
@@ -41,4 +45,5 @@ def main():
 
 
 if __name__ == '__main__':
+    # rospy.init_node("build_tower")
     main()
