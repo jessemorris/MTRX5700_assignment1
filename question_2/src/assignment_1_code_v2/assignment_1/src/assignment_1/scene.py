@@ -63,37 +63,38 @@ class Scene():
         """
         return list(self.object_dict.values())
 
-    # def get_actual_goal_pose(self):
-    #     """[Gets the pose of the object that we want to stack ontop of. This is the heightest object
-    #     that is near the goal pose.]
+    def get_actual_goal_pose(self):
+        """[Gets the pose of the object that we want to stack ontop of. This is the heightest object
+        that is near the goal pose.]
 
-    #     Returns:
-    #         [geometry_msgs/Pose]: [Pose of the object]
-    #     """
-    #     scene_objects = self.get_dynamic_objects()
+        Returns:
+            [geometry_msgs/Pose]: [Pose of the object]
+        """
+        scene_objects = self.get_dynamic_objects()
 
-    #     ## sort objects by height
-    #     objects_by_height = Scene.sort_scene_objects(scene_objects)
+        ## sort objects by height
+        objects_by_height = Scene.sort_scene_objects(scene_objects)
 
-    #     poses_at_goal = []
+        poses_at_goal = []
 
-    #     for scene_object in objects_by_height:
-    #         pose = scene_object.pose 
-    #         x = pose.position.x 
-    #         y = pose.position.y
+        for scene_object in objects_by_height:
+            pose = scene_object.pose 
+            x = pose.position.x 
+            y = pose.position.y
 
-    #         dist_from_goal = euclid_distance(x, y, self.goal_pose.position.x, self.goal_pose.position.y)
-    #         if dist_from_goal < self.dist_threshold:
-    #             poses_at_goal.append(scene_object)
-    #             rospy.loginfo("Scene object {} is at goal".format(scene_object.name))
+            dist_from_goal = euclid_distance(x, y, self.goal_pose.position.x, self.goal_pose.position.y)
+            if dist_from_goal < self.dist_threshold:
+                poses_at_goal.append(scene_object)
+                rospy.loginfo("Scene object {} is at goal".format(scene_object.name))
 
-    #     if len(poses_at_goal) > 1:
-    #         heighest_object = Scene.get_heighest_object(poses_at_goal)
-    #         rospy.loginfo("Heightest object {}".format(heighest_object))
-    #         return heighest_object.pose
-    #     else:
-    #         rospy.loginfo("No objects a goal pose. Using default pose {}".format(self.goal_pose))
-    #         return self.goal_pose
+        if len(poses_at_goal) > 0:
+            heighest_object = Scene.get_heighest_object(poses_at_goal)
+            rospy.loginfo("Heightest object {}".format(heighest_object))
+            return heighest_object.pose
+        else:
+            rospy.logfatal("No objects a goal pose. Using default pose {}".format(self.goal_pose))
+            #should never get here due to check
+            return self.goal_pose
 
 
     def get_non_stacked_objects(self):
@@ -110,9 +111,7 @@ class Scene():
             y = pose.position.y
 
             dist_from_goal = euclid_distance(x, y, self.goal_pose.position.x, self.goal_pose.position.y)
-            if dist_from_goal < self.dist_threshold:
-                rospy.loginfo("Scene object {} is at goal".format(scene_object.name))
-            else:
+            if dist_from_goal > self.dist_threshold:
                 rospy.loginfo("Scene object {} is {}m away from goal".format(scene_object.name, dist_from_goal))
                 non_stacked_objects.append(scene_object)
 
@@ -133,12 +132,10 @@ class Scene():
 
     @staticmethod
     def get_heighest_object(scene_objects):
-        """[Sorts and gets the heighest object by z coordinate]
+        """[Gets heighest object from the list]
 
         Args:
-            scene_objects ([List[SceneObjects]]): [description]
-        Returns:
-            [SceneObjects]: [The heightest SceneObject by z coordinate]
+            scene_objects ([[List[SceneObjects]]): [description]
         """
         return Scene.sort_scene_objects(scene_objects)[0]
 

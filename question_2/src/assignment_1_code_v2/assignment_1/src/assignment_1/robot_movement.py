@@ -32,14 +32,15 @@ class RobotMotion():
     def run_build(self):
         while not rospy.is_shutdown():
             scene_objects = self.scene.get_non_stacked_objects()
+            ## no objects have been stacked
             if len(scene_objects) == self.scene.num_objects:
                 object_to_stack = scene_objects[0]
                 goal = self.scene.goal_pose
                 rospy.loginfo("No stacked objects. Picking {} to start stacking".format(object_to_stack.name))
 
             else:
-                object_to_stack = Scene.get_heighest_object(scene_objects)
-                goal = object_to_stack.pose
+                goal = self.scene.get_actual_goal_pose()
+                object_to_stack = scene_objects[0]
                 rospy.loginfo("We have some stacked")
 
             rospy.loginfo("To goal pose: {}".format(goal))
@@ -54,15 +55,18 @@ class RobotMotion():
         """
         initial_pose = scene_object.pose
 
+        motion_pose = initial_pose
+
         ## move just above the object
-        initial_pose.position.z += 0.1
-        initial_pose.orientation = self._get_downfacing_orientation()
-        self._move_to_pose(initial_pose)
+        motion_pose.position.z = 0.3
+        motion_pose.orientation = self._get_downfacing_orientation()
+        self._move_to_pose(motion_pose)
         rospy.sleep(0.5)
 
 
-        initial_pose.position.z = scene_object.pose.position.z + 0.02
-        self._move_to_pose(initial_pose)
+        # motion_pose.position.z = initial_pose.position.z + 0.048
+        motion_pose.position.z = initial_pose.position.z + 0.048
+        self._move_to_pose(motion_pose)
 
         ## move to pick up
         self.close_gripper(scene_object)
@@ -71,23 +75,36 @@ class RobotMotion():
         rospy.loginfo("Collection object {}".format(scene_object.name))
 
         ## go up
-        initial_pose.position.z = 0.4
-        self._move_to_pose(initial_pose)
+        motion_pose.position.z += 0.3
+        self._move_to_pose(motion_pose)
+        rospy.sleep(0.5)
 
+        #go accross at same height
+        motion_pose.position.x = pose.position.x
+        motion_pose.position.y = pose.position.y
+        self._move_to_pose(motion_pose)
+        rospy.sleep(0.5)
 
+        rospy.loginfo("Moving across above goal")
+
+        # # go down to object before release
         pose.orientation = self._get_downfacing_orientation()
-        pose.position.z += 0.1
-        self._move_to_pose(pose)
+        # pose.position.z -= 0.1
+        # self._move_to_pose(pose)
 
-        pose.position.z -= 0.15
-        self._move_to_pose(pose)
+        rospy.loginfo("Correcting z before release")
+        rospy.loginfo(pose.position.z)        
+        if pose.position.z > 0.01:
+            pose.position.z += 0.048
+            self._move_to_pose(pose)
 
         self.open_gripper(scene_object)
         rospy.loginfo("Placed object {}".format(scene_object.name))
 
         ## go up and away
-        pose.position.z = 0.4
+        pose.position.z = 0.2
         self._move_to_pose(pose)
+        rospy.loginfo("Moving away...")
 
     def update_gripper_orientation(self, target_object):
         """[Updates the gipper to an orientation over the specified scene object such that it can 

@@ -24,7 +24,8 @@
   <depend>moveit_ros_planning</depend>
   <depend>moveit_ros_planning_interface</depend>
   <depend>moveit_visual_tools</depend>
-  <depend>interactive_markers</depend>
+  <depend>gazebo_msgs</depend>
+  
 
   <build_depend>tf2_ros</build_depend>
   <build_depend>eigen</build_depend>

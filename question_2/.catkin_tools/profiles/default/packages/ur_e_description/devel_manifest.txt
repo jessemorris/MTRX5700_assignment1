@@ -1,5 +1,5 @@
 assignment_1_code_v2/fmauch_universal_robot/ur_e_description
-/root/ocrtoc_ws/src/devel/.private/ur_e_description/cmake.lock /root/ocrtoc_ws/src/devel/./cmake.lock
-/root/ocrtoc_ws/src/devel/.private/ur_e_description/share/ur_e_description/cmake/ur_e_descriptionConfig-version.cmake /root/ocrtoc_ws/src/devel/share/ur_e_description/cmake/ur_e_descriptionConfig-version.cmake
-/root/ocrtoc_ws/src/devel/.private/ur_e_description/share/ur_e_description/cmake/ur_e_descriptionConfig.cmake /root/ocrtoc_ws/src/devel/share/ur_e_description/cmake/ur_e_descriptionConfig.cmake
-/root/ocrtoc_ws/src/devel/.private/ur_e_description/lib/pkgconfig/ur_e_description.pc /root/ocrtoc_ws/src/devel/lib/pkgconfig/ur_e_description.pc
+/root/ocrtoc_ws/devel/.private/ur_e_description/cmake.lock /root/ocrtoc_ws/devel/./cmake.lock
+/root/ocrtoc_ws/devel/.private/ur_e_description/share/ur_e_description/cmake/ur_e_descriptionConfig-version.cmake /root/ocrtoc_ws/devel/share/ur_e_description/cmake/ur_e_descriptionConfig-version.cmake
+/root/ocrtoc_ws/devel/.private/ur_e_description/share/ur_e_description/cmake/ur_e_descriptionConfig.cmake /root/ocrtoc_ws/devel/share/ur_e_description/cmake/ur_e_descriptionConfig.cmake
+/root/ocrtoc_ws/devel/.private/ur_e_description/lib/pkgconfig/ur_e_description.pc /root/ocrtoc_ws/devel/lib/pkgconfig/ur_e_description.pc

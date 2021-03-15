@@ -1,5 +1,5 @@
 assignment_1_code_v2/robotiq/robotiq_2f_85_gripper_visualization
-/root/ocrtoc_ws/src/devel/.private/robotiq_2f_85_gripper_visualization/cmake.lock /root/ocrtoc_ws/src/devel/./cmake.lock
-/root/ocrtoc_ws/src/devel/.private/robotiq_2f_85_gripper_visualization/share/robotiq_2f_85_gripper_visualization/cmake/robotiq_2f_85_gripper_visualizationConfig-version.cmake /root/ocrtoc_ws/src/devel/share/robotiq_2f_85_gripper_visualization/cmake/robotiq_2f_85_gripper_visualizationConfig-version.cmake
-/root/ocrtoc_ws/src/devel/.private/robotiq_2f_85_gripper_visualization/share/robotiq_2f_85_gripper_visualization/cmake/robotiq_2f_85_gripper_visualizationConfig.cmake /root/ocrtoc_ws/src/devel/share/robotiq_2f_85_gripper_visualization/cmake/robotiq_2f_85_gripper_visualizationConfig.cmake
-/root/ocrtoc_ws/src/devel/.private/robotiq_2f_85_gripper_visualization/lib/pkgconfig/robotiq_2f_85_gripper_visualization.pc /root/ocrtoc_ws/src/devel/lib/pkgconfig/robotiq_2f_85_gripper_visualization.pc
+/root/ocrtoc_ws/devel/.private/robotiq_2f_85_gripper_visualization/cmake.lock /root/ocrtoc_ws/devel/./cmake.lock
+/root/ocrtoc_ws/devel/.private/robotiq_2f_85_gripper_visualization/share/robotiq_2f_85_gripper_visualization/cmake/robotiq_2f_85_gripper_visualizationConfig-version.cmake /root/ocrtoc_ws/devel/share/robotiq_2f_85_gripper_visualization/cmake/robotiq_2f_85_gripper_visualizationConfig-version.cmake
+/root/ocrtoc_ws/devel/.private/robotiq_2f_85_gripper_visualization/share/robotiq_2f_85_gripper_visualization/cmake/robotiq_2f_85_gripper_visualizationConfig.cmake /root/ocrtoc_ws/devel/share/robotiq_2f_85_gripper_visualization/cmake/robotiq_2f_85_gripper_visualizationConfig.cmake
+/root/ocrtoc_ws/devel/.private/robotiq_2f_85_gripper_visualization/lib/pkgconfig/robotiq_2f_85_gripper_visualization.pc /root/ocrtoc_ws/devel/lib/pkgconfig/robotiq_2f_85_gripper_visualization.pc
