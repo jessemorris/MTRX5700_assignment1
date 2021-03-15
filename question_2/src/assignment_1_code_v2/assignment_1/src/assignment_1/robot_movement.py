@@ -58,16 +58,21 @@ class RobotMotion():
         motion_pose = initial_pose
 
         ## move just above the object
-        motion_pose.position.z = 0.3
+        motion_pose.position.z += 0.1
         motion_pose.orientation = self._get_downfacing_orientation()
         self._move_to_pose(motion_pose)
         rospy.sleep(0.5)
 
 
         # motion_pose.position.z = initial_pose.position.z + 0.048
-        motion_pose.position.z = initial_pose.position.z + 0.048
+        motion_pose.position.z = initial_pose.position.z + 0.086
         self._move_to_pose(motion_pose)
+        rospy.sleep(1) ## wait for update from topic
 
+        rospy.loginfo(self.ee_pose.position)
+        rospy.loginfo(initial_pose.position)
+        offset = self.ee_pose.position.z + initial_pose.position.z
+        rospy.loginfo("Offset between robot pose and object: {}".format(offset))
         ## move to pick up
         self.close_gripper(scene_object)
 
@@ -75,13 +80,14 @@ class RobotMotion():
         rospy.loginfo("Collection object {}".format(scene_object.name))
 
         ## go up
-        motion_pose.position.z += 0.3
+        motion_pose.position.z += (0.05 + offset)
         self._move_to_pose(motion_pose)
         rospy.sleep(0.5)
 
         #go accross at same height
         motion_pose.position.x = pose.position.x
         motion_pose.position.y = pose.position.y
+        motion_pose.position.z = pose.position.z + (0.086+ offset)
         self._move_to_pose(motion_pose)
         rospy.sleep(0.5)
 
@@ -94,15 +100,16 @@ class RobotMotion():
 
         rospy.loginfo("Correcting z before release")
         rospy.loginfo(pose.position.z)        
-        if pose.position.z > 0.01:
-            pose.position.z += 0.048
-            self._move_to_pose(pose)
+        # if pose.position.z > 0.005:
+        pose.position.z += (0.086+ offset)
+        self._move_to_pose(pose)
+        rospy.sleep(0.1)
 
         self.open_gripper(scene_object)
         rospy.loginfo("Placed object {}".format(scene_object.name))
 
         ## go up and away
-        pose.position.z = 0.2
+        pose.position.z += (0.1)
         self._move_to_pose(pose)
         rospy.loginfo("Moving away...")
 
