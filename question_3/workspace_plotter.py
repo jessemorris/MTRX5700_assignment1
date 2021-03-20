@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+
 plt.style.use('seaborn-whitegrid')
 import numpy as np
 import math
@@ -8,29 +9,36 @@ length2 = 280
 length3 = 350
 
 startingHeight = np.linspace(0, 150, 10)
-Angle2 = np.linspace(-(math.pi/3), (math.pi/3), 9)
-Angle3 = np.linspace(-(math.pi*2/3), (math.pi*2/3), 9)
+Angle2 = np.linspace(-(math.pi / 3), (math.pi / 3), 9)
+Angle3 = np.linspace(-(math.pi * 2 / 3), (math.pi * 2 / 3), 9)
 a2 = Angle2
 a3 = Angle3
+closest = 1000
 
 x1 = 0
+y1 = startingHeight
 
-for m in startingHeight:
-
-    y1 = startingHeight
-
+for m in y1:
     for i in a2:
         for j in a3:
 
             x2 = x1 + length2 * math.cos(i)
             y2 = y1 + length2 * math.sin(i)
 
-            x3 = x2 + length3 * math.cos(j+i)
-            y3 = y2 + length3*math.sin(j+i)
+            x3 = x2 + length3 * math.cos(j + i)
+            y3 = y2 + length3 * math.sin(j + i)
 
-            # plt.plot([x1, abs(x2)], [y1, y2])
-            plt.plot( [x1, abs(x2)], [y1, y2],[abs(x2), x3], [y2, y3], linewidth = 1)
+            # Shows all possible end effector poses
+            plt.figure(1)
+            plt.gca().set_aspect('equal', adjustable='box')
 
-plt.gca().set_aspect('equal', adjustable='box')
+            for p in range(9):
+                plt.plot(x3, y3[p], marker='o', markerfacecolor='blue', markersize='6')
+
+            # Shows all possible positions of each link
+            plt.figure(2)
+            plt.plot([x1, abs(x2)], [y1, y2], color='green', linewidth=1)
+            plt.plot([abs(x2), x3], [y2, y3], color='red', linewidth=1)
+            plt.gca().set_aspect('equal', adjustable='box')
+
 plt.show()
-
